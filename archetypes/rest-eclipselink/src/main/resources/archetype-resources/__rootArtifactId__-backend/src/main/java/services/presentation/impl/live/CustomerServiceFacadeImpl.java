@@ -26,8 +26,10 @@
  */
 package ${package}.services.presentation.impl.live;
 
+#if ( !$null.isNull($swagger) && $swagger == 'true' )
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
+#end
 import ${package}.converters.p2b.AccountsP2BBeanConverter;
 import ${package}.converters.p2b.CustomerInfoP2BBeanConverter;
 import ${package}.helpers.ErrorCodes;
@@ -56,8 +58,10 @@ import javax.ws.rs.core.MediaType;
 
 @Service
 @Singleton
+#if ( !$null.isNull($swagger) && $swagger == 'true' )
 @Path("/secure/customer")
 @Api(value = "/secure/customer", description = "Customer operations")
+#end
 public class CustomerServiceFacadeImpl extends AbstractPresentationService implements CustomerServiceFacade {
 
 
@@ -81,8 +85,10 @@ public class CustomerServiceFacadeImpl extends AbstractPresentationService imple
 
 
     //secure/customer/customerinfo
+    #if ( !$null.isNull($swagger) && $swagger == 'true' )
     @Path("/customerinfo")
     @ApiOperation(value = "customerinfo", notes = "Obtain Customer Info", response = CustomerInfoVO.class)
+    #end
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public CustomerDataVO getCustomerInfo() throws Exception{
@@ -100,8 +106,10 @@ public class CustomerServiceFacadeImpl extends AbstractPresentationService imple
         result.setError(errorCodes.getErrorVO(ErrorCodes.SUCCESS_CODE));
         return result;
     }
-    @Path("/customerinfo")
+    #if ( !$null.isNull($swagger) && $swagger == 'true' )
+    @Path("/customerinfo")    
     @ApiOperation(value = "customerinfo", notes = "Global Position", response = CustomerInfoVO.class)
+    #end
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     public CustomerDataVO saveCustomerInfo(CustomerInfoVO customerInfoVO) throws Exception{
@@ -121,8 +129,10 @@ public class CustomerServiceFacadeImpl extends AbstractPresentationService imple
     }
 
     //secure/customer/globalpos
+    #if ( !$null.isNull($swagger) && $swagger == 'true' )
     @Path("/globalpos")
     @ApiOperation(value = "globalpos", notes = "Global Position", response = AccountsDataVO.class)
+    #end
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public AccountsDataVO globalPosition() throws Exception{

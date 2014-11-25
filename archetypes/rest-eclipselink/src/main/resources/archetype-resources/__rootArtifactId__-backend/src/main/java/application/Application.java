@@ -26,9 +26,11 @@
  */
 package ${package}.application;
 
+#if ( !$null.isNull($swagger) && $swagger == 'true' )
 import com.wordnik.swagger.jersey.listing.ApiListingResourceJSON;
 import com.wordnik.swagger.jersey.listing.JerseyApiDeclarationProvider;
 import com.wordnik.swagger.jersey.listing.JerseyResourceListingProvider;
+#end
 import ${package}.helpers.JerseyExceptionHandler;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -41,9 +43,11 @@ public class Application extends ResourceConfig {
         ResourceConfig config = packages("${package}.services.presentation.impl.live").
                 register(AutowiredInjectResolver.class).
                 register(JacksonFeature.class).
+                #if ( !$null.isNull($swagger) && $swagger == 'true' )
                 register(ApiListingResourceJSON.class).
                 register(JerseyApiDeclarationProvider.class).
                 register(JerseyResourceListingProvider.class);
+        		#end
                 //custom exception handling
                 register(JerseyExceptionHandler.class);
 

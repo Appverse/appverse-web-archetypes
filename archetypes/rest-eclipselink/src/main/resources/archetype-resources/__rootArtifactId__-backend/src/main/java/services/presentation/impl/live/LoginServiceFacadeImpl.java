@@ -3,9 +3,10 @@
 #set( $symbol_escape = '\' )
 package ${package}.services.presentation.impl.live;
 
-
+#if ( !$null.isNull($swagger) && $swagger == 'true' )
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
+#end
 import ${package}.converters.p2b.UserP2BBeanConverter;
 import ${package}.helpers.ErrorCodes;
 import ${package}.model.business.customer.User;
@@ -40,8 +41,10 @@ import javax.ws.rs.core.MediaType;
  * Created by MCRZ on 3/03/14.
  */
 @Controller
+#if ( !$null.isNull($swagger) && $swagger == 'true' )
 @Path("/login")
 @Api(value = "/login", description = "Login operations")
+#end
 public class LoginServiceFacadeImpl extends AbstractPresentationService implements LoginServiceFacade {
 
 
@@ -57,8 +60,10 @@ public class LoginServiceFacadeImpl extends AbstractPresentationService implemen
     protected UserP2BBeanConverter userP2BBeanConverter;
 
     //login
+    #if ( !$null.isNull($swagger) && $swagger == 'true' )
     @Path("/login")
     @ApiOperation(value = "login", notes = "The login method", response = UserDataVO.class)
+    #end
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -86,9 +91,11 @@ public class LoginServiceFacadeImpl extends AbstractPresentationService implemen
     }
 
     //secure/logout
+    #if ( !$null.isNull($swagger) && $swagger == 'true' )
     @Path("/logout")
-    @POST
     @ApiOperation(value = "logout", notes = "Logout", response = ResultDataVO.class)
+    #end
+    @POST
     public ResultDataVO logout(@Context HttpServletRequest req, @Context HttpServletResponse resp) throws Exception{
         logger.info("logout");
         loginService.logout();
