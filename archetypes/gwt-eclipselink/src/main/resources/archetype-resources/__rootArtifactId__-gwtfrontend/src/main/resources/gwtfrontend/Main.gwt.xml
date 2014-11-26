@@ -6,6 +6,12 @@
 	<!-- Inherits Modules -->
 	<inherits name="org.appverse.web.framework.frontend.gwt.API"/>
 	<inherits name="${package}.Shared"/>
+	
+	<!-- JSR-303 validator -->
+	<inherits name="org.hibernate.validator.HibernateValidator" />
+	<replace-with class="${package}.gwtfrontend.common.ApplicationValidationFactory">
+  		<when-type-is class="javax.validation.ValidatorFactory" />
+	</replace-with>
 
 	<!-- Entry point class. -->
 	<entry-point class='com.mvp4g.client.Mvp4gEntryPoint' />
