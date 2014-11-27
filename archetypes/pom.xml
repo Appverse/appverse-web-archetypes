@@ -167,10 +167,10 @@
 	</mailingLists>
 
 	<scm>
-		<connection>scm:git:https://${appverseweb.user.name}:${appverseweb.user.password}@github.com/Appverse/appverse-web.git</connection>
-		<developerConnection>scm:git:https://${appverseweb.user.name}:${appverseweb.user.password}@github.com/Appverse/appverse-web.git</developerConnection>
+		<connection>scm:git:https://${appverseweb.user.name}:${appverseweb.user.password}@github.com/Appverse/appverse-web-archetypes.git</connection>
+		<developerConnection>scm:git:https://${appverseweb.user.name}:${appverseweb.user.password}@github.com/Appverse/appverse-web-archetypes.git</developerConnection>
 		<tag>master</tag>
-		<url>https://github.com/Appverse/appverse-web</url>
+		<url>https://github.com/Appverse/appverse-web-archetypes</url>
 	</scm>
 
 	<modules>
