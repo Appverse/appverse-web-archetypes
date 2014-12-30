@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:example-cc="http://java.sun.com/jsf/composite/example-cc"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:aui="http://liferay.com/faces/aui">
+
+	<h:form>
+
+		<h:messages globalOnly="true" />
+
+		<br />
+		<aui:row>
+			<aui:col>
+				<ul>
+					<li><em><h:outputText value="#{bridgeContext.bridgeConfig.attributes['JSF']}" /></em></li>
+					<li><em><h:outputText value="#{bridgeContext.bridgeConfig.attributes['PrimeFaces']}" /></em></li>
+					<li><em><h:outputText value="#{bridgeContext.bridgeConfig.attributes['Liferay Faces Alloy']}" /></em></li>
+					<li><em><h:outputText value="#{bridgeContext.bridgeConfig.attributes['Liferay Faces Bridge']}" /></em></li>
+				</ul>
+			</aui:col>
+		</aui:row>
+
+	</h:form>
+
+</ui:composition>

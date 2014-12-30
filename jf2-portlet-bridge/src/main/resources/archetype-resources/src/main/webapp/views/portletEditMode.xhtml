@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:aui="http://liferay.com/faces/aui">
+	
+	<h:head />
+	<h:body styleClass="jsf2-portlet">
+
+		<br />
+		<aui:row>
+			<aui:col>
+				<ul>
+					<li><em><h:outputText value="#{bridgeContext.bridgeConfig.attributes['JSF']}" /></em></li>
+					<li><em><h:outputText value="#{bridgeContext.bridgeConfig.attributes['PrimeFaces']}" /></em></li>
+					<li><em><h:outputText value="#{bridgeContext.bridgeConfig.attributes['Liferay Faces Alloy']}" /></em></li>
+					<li><em><h:outputText value="#{bridgeContext.bridgeConfig.attributes['Liferay Faces Bridge']}" /></em></li>
+				</ul>
+			</aui:col>
+		</aui:row>
+
+	</h:body>
+</f:view>
