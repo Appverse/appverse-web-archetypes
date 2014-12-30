@@ -1,6 +1,5 @@
-.idea
+/target
+.project
+.classpath
+.settings
 *.iml
-target
-manifest.mf
-nbproject
-atlassian-ide-plugin.xml
