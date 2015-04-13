@@ -17,7 +17,7 @@
     	  p:driverClassName="${symbol_dollar}{db.driverClassName}" p:url="${symbol_dollar}{db.url}" p:username="${symbol_dollar}{db.username}" p:password="${symbol_dollar}{db.password}"
 		  p:initialSize="${symbol_dollar}{db.poolInitialSize}" p:maxActive="${symbol_dollar}{db.poolMaxActive}" p:minIdle="${symbol_dollar}{db.poolMinIdle}" p:maxIdle="${symbol_dollar}{db.poolMaxIdle}"
 		  p:testOnBorrow="${symbol_dollar}{db.testOnBorrow}"  p:testWhileIdle="${symbol_dollar}{db.testWhileIdle}"  p:timeBetweenEvictionRunsMillis="${symbol_dollar}{db.timeBetweenEvictionRunsMillis}" 
-		  p:validationQuery="${symbol_dollar}{db.validationQuery}"/>
+		  p:validationQuery="${symbol_dollar}{db.validationQuery}" destroy-method="close"/>
 
 
     <!-- ====================================================================== -->

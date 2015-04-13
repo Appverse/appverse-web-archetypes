@@ -32,7 +32,7 @@
      	   p:driverClassName="${symbol_dollar}{db.driverClassName}" p:url="${symbol_dollar}{db.url}" p:username="${symbol_dollar}{db.username}" p:password="${symbol_dollar}{db.password}"
  		   p:initialSize="${symbol_dollar}{db.poolInitialSize}" p:maxActive="${symbol_dollar}{db.poolMaxActive}" p:minIdle="${symbol_dollar}{db.poolMinIdle}" p:maxIdle="${symbol_dollar}{db.poolMaxIdle}"
  		   p:testOnBorrow="${symbol_dollar}{db.testOnBorrow}"  p:testWhileIdle="${symbol_dollar}{db.testWhileIdle}"  p:timeBetweenEvictionRunsMillis="${symbol_dollar}{db.timeBetweenEvictionRunsMillis}"
- 		   p:validationQuery="${symbol_dollar}{db.validationQuery}" p:connectionProperties="${symbol_dollar}{db.connectionProperties}"/>
+ 		   p:validationQuery="${symbol_dollar}{db.validationQuery}" p:connectionProperties="${symbol_dollar}{db.connectionProperties}" destroy-method="close"/>
 
     <jdbc:initialize-database data-source="dataSource" enabled="${symbol_dollar}{db.loadScripts}">
         <jdbc:script location="classpath:/sql/HSQLPlatform-schema-create.sql"/>
